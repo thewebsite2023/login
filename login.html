@@ -85,7 +85,7 @@
 <body>
     <div class="container">
         <div class="login-container" id="loginContainer">
-            Đăng nhập bằng MiniQuiz Login
+            Đăng nhập bằng <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal1">MiniQuiz Login</a>
             <hr>
             <div class="row">
                 <div class="col-md-6">
@@ -109,10 +109,47 @@
                 </div>
             </div>
         </div>
-
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin nhà phát triển</h1>
+      </div>
+      <div class="modal-body">
+        E-mail: nhattiento2704@gmail.com
+        <br>
+        Thao tác đăng nhập sẽ chuyển bạn đến: https://thewebsite2023.github.io/login
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" style="border-radius:100px;">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin phần mềm</h1>
+      </div>
+      <div class="modal-body">
+        MiniQuiz Login là dịch vụ đăng nhập ngoài được phân phối độc quyền cho dịch vụ MiniQuiz. Nếu có thắc mắc, vui lòng liên hệ qua các thông tin sau:
+        <br>
+        E-mail: <a href="mailto:nhattiento2704@gmail.com">nhattiento2704@gmail.com</a>
+        <br>
+        Số điện thoại: <a href="tel:0988065911">0988065911</a>
+        <br>
+        Nhắn tin trực tiếp: <a href="https://thewebsite2023.github.io/">https://thewebsite2023.github.io/</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" style="border-radius: 100px;">OK</button>
+      </div>
+    </div>
+  </div>
+        </div>
         <script>
             const accounts = [
-                { username: '1', password: '1', fullName: 'Thành Nam' }
+                { username: 'nguyendangthanhnam2013', password: 'thanhnam30072013', fullName: 'Thành Nam' }
             ];
         
             document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -165,7 +202,7 @@
                     <form id="passwordForm">
                             <br>
                             <div>
-                            Nếu bạn tiếp tục, MiniQuiz Login sẽ chia sẻ tên, địa chỉ email,<br> lựa chọn ưu tiên về ngôn ngữ và ảnh hồ sơ của bạn với MiniQuiz. <br>Hãy xem <a href="#">Chính sách quyền riêng tư</a> và <a href="#">Điều khoản dịch vụ</a> của MiniQuiz.
+                            Nếu bạn tiếp tục, MiniQuiz Login sẽ chia sẻ tên, tên đăng nhập,<br> lựa chọn ưu tiên về ngôn ngữ và ảnh hồ sơ của bạn với MiniQuiz. <br>Hãy xem <a href="#">Chính sách quyền riêng tư</a> và <a href="#">Điều khoản dịch vụ</a> của MiniQuiz.
                             </div>
                             <br>
                             <div>
