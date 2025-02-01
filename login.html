@@ -37,22 +37,6 @@
             border: 1px solid #ccc;
         }
 
-        #login {
-            float: right;
-            padding: 10px;
-            border-radius: 100px;
-            background-color: white;
-            color:rgb(13, 0, 255) ;
-            border: 2px solid rgb(13, 0, 255);
-            cursor: pointer;
-        }
-
-        #login:hover {
-            border-radius: 100px;
-            background-color: rgb(13, 0, 255);
-            color: white;
-        }
-
         a {
             color: blue;
             text-decoration: none;
@@ -104,7 +88,7 @@
                             </div>
                             <br>
                             <br>
-                            <button type="submit" id="login">Tiếp theo</button>
+                            <button type="submit" class="btn btn-primary">Tiếp theo</button>
                     </form>
                 </div>
             </div>
@@ -149,7 +133,8 @@
         </div>
         <script>
             const accounts = [
-                { username: 'nguyendangthanhnam2013', password: 'thanhnam30072013', fullName: 'Thành Nam' }
+                { username: 'nguyendangthanhnam2013', password: 'thanhnam30072013', fullName: 'Thành Nam' },
+                { username: '1', password: '1', fullName: '1' }
             ];
         
             document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -178,7 +163,7 @@
                             </div>
                             <br>
                             <br>
-                            <button type='button' id="login" onclick='checkPassword("${account.password}")'>Tiếp theo</button>
+                            <button type='button' class="btn btn-primary" onclick='checkPassword("${account.password}")'>Tiếp theo</button>
                     </form>
                 </div>
                     `;
