@@ -55,41 +55,44 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">MiniQuiz</a>
-            <form class="d-flex" role="search">
-              <a href="https://thewebsite2023.github.io/" class="btn btn-primary">Về trang chủ</a>
-            </form>
           </div>
         </div>
       </nav>
     <div class="login-container">
         <h3>Đăng nhập vào tài khoản MiniQuiz của bạn</h3>
-        <!--div id="result" class="error-message"></div>
-	    <br>
-        <input type="text" id="username" placeholder="Tên đăng nhập" required>
+        div id="result" class="error-message"></div>
+    	<br>
+        <!--input type="text" id="username" placeholder="Tên đăng nhập" required>
         <input type="password" id="password" placeholder="Mật khẩu" required>
         <button type="submit" onclick="Login()">Đăng nhập</button>
-        <center>hoặc</center-->
+        <center>hoặc</center> -->
 	<br>
         <button onclick="openLoginWindow()">Đăng nhập bằng MiniQuiz Login</button>
         <script>
-        function openLoginWindow() {
-            // Mở cửa sổ mới cho trang đăng nhập
-            const loginWindow = window.open('login.html', 'loginWindow', 'width=700,height=700');
-
-            // Lắng nghe sự kiện 'message' từ cửa sổ con
-            window.addEventListener('message', function(event) {
-                if (event.origin === window.location.origin) {
-                    // Kiểm tra nếu đăng nhập thành công (tùy theo thông tin bạn gửi)
-                    if (event.data === 'success') {
-                        // Đóng cửa sổ đăng nhập
-                        loginWindow.close();
-
-                        // Chuyển hướng sang trang mới mà không thay đổi URL của trang chính
-                        window.location.href = 'https://thewebsite2023.github.io/';  // Thay bằng trang bạn muốn chuyển hướng
+            function openLoginWindow() {
+                // Mở cửa sổ mới cho trang đăng nhập
+                const loginWindow = window.open('login.html', 'loginWindow', 'width=700,height=700');
+            
+                // Kiểm tra định kỳ xem cửa sổ đã bị đóng hay chưa
+                const checkClosed = setInterval(() => {
+                    if (loginWindow.closed) {
+                        clearInterval(checkClosed);
+                        document.getElementById("result").innerText = "Đăng nhập không thành công!";
                     }
-                }
-            });
-        }
-    </script>
+                }, 500);
+            
+                // Lắng nghe sự kiện 'message' từ cửa sổ con
+                window.addEventListener('message', function eventHandler(event) {
+                    if (event.origin === window.location.origin) {
+                        // Kiểm tra nếu đăng nhập thành công
+                        if (event.data === 'success') {
+                            clearInterval(checkClosed); // Dừng kiểm tra nếu đã đăng nhập thành công
+                            loginWindow.close();
+                            window.location.href = 'https://thewebsite2023.github.io/my-exam-en';
+                        }
+                    }
+                });
+            }
+            </script>
     </body>
 </html>
