@@ -88,7 +88,7 @@
                             </div>
                             <br>
                             <br>
-                            <button type="submit" class="btn btn-primary">Tiếp theo</button>
+                            <button type="submit" class="btn btn-primary btn-right">Tiếp theo</button>
                     </form>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                             </div>
                             <br>
                             <br>
-                            <button type='button' class="btn btn-primary" onclick='checkPassword("${account.password}")'>Tiếp theo</button>
+                            <button type='button' class="btn btn-primary btn-right" onclick='checkPassword("${account.password}")'>Tiếp theo</button>
                     </form>
                 </div>
                     `;
@@ -196,8 +196,8 @@
                             <br>
                             <br>
                             <div class="row">
-                            <button class="btn btn-outline-danger" onclick="cancelAgreement()" id="cancelbutton">Hủy</button>   
-                        <button class="btn btn-outline-success" onclick="continueAgreement()" id="continuebutton">Tiếp tục</button>
+                            <button class="btn-spacing" onclick="cancelAgreement()" id="cancelbutton">Hủy</button>   
+                        <button onclick="continueAgreement()" id="continuebutton">Tiếp tục</button>
                         </div>
                     </form>
                 </div>
@@ -218,12 +218,24 @@
         </script>   
         <style>
             #cancelbutton {
-                width: 50%;
+                width: 49%;
                 border-radius: 100px;
+                background-color: white;
+                color: rgb(0, 123, 255);
+                border: 1px solid gray;
             }
             #continuebutton {
-                width: 50%;
+                width: 49%;
                 border-radius: 100px;
+                background-color: white;
+                color: rgb(0, 123, 255);
+                border: 1px solid gray;
+            }
+            .btn-right {
+                float: right;
+            }
+            .btn-spacing {
+                margin-right: 4px
             }
         </style>     
 </body>
