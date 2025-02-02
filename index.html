@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập | MiniQuiz</title>
@@ -60,7 +69,9 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="#">MiniQuiz</a>
           </div>
-        </div>
+      <form class="d-flex" role="search">
+        <div id="google_translate_element" style="float: right;"></div>
+      </form>
       </nav>
     <div class="login-container">
         <h3>Đăng nhập vào tài khoản MiniQuiz của bạn</h3>
