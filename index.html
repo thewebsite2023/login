@@ -77,9 +77,25 @@
         <input type="text" id="username" placeholder="Bạn không thể đăng nhập bằng cách này ngay bây giờ" required disabled>
         <input type="password" id="password" placeholder="Bạn không thể đăng nhập bằng cách này ngay bây giờ" required disabled>
         <button type="submit" onclick="Login()" disabled>Đăng nhập</button>
-        <div class="notice">Lưu ý: Đây là cách đăng nhập dự phòng khi Đăng nhập bằng MiniQuiz Login bị lỗi. Do đó, bạn không thể đăng nhập bằng cách này ngay bây giờ. Nếu Đăng nhập bằng MiniQuiz Login bị lỗi, khi bạn đăng nhập sẽ dùng tên đăng nhập và mật khẩu mà bạn đã đăng nhập bằng MiniQuiz Login</div>
+      <center><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Bấm vào đây để xem thêm thông tin về cách đăng nhập trên</a></center>
         <center>hoặc</center>
         <button onclick="openLoginWindow()">Đăng nhập bằng MiniQuiz Login</button>
+    </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Lưu ý</h1>
+            </div>
+            <div class="modal-body">
+                <div class="notice">Đây là cách đăng nhập dự phòng khi Đăng nhập bằng MiniQuiz Login bị lỗi. Do đó, bạn không thể đăng nhập bằng cách này ngay bây giờ. Nếu Đăng nhập bằng MiniQuiz Login bị lỗi, khi bạn đăng nhập sẽ dùng tên đăng nhập và mật khẩu mà bạn đã đăng nhập bằng MiniQuiz Login</div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xong</button>
+            </div>
+          </div>
+        </div>
+      </div>
         <script>
             function openLoginWindow() {
                 // Mở cửa sổ mới cho trang đăng nhập
