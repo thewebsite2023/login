@@ -79,6 +79,31 @@
         <center>hoặc</center>
         <button onclick="openLoginWindow()">Đăng nhập bằng MiniQuiz Login</button>
     </div>
+    <script>
+      const listAccount = [{
+    username: 'nguyendangthanhnam2013', password: 'thanhnam30072013',
+    username: 'admin', password: 'admin'
+  }];
+  let isLogin = !!localStorage.getItem('token');
+  function CheckLogin () {
+    if (isLogin) {
+      window.location.href = 'https://thewebsite2023.github.io/my-exam-en/';
+    }
+  }
+
+  function Login () {
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let checkLogin = listAccount.some(value => value.username === username && value.password === password);
+    if (checkLogin) {
+      localStorage.setItem('token', username);
+      isLogin = true;
+      CheckLogin();
+    } else {
+      result.innerHTML = "<h6>Thông tin đăng nhập của bạn không khớp với dữ liệu của chúng tôi.</h6>";
+    }
+  }
+  </script>
         <script>
             function openLoginWindow() {
                 // Mở cửa sổ mới cho trang đăng nhập
@@ -105,30 +130,5 @@
                 });
             }
             </script>
-  <script>
-      const listAccount = [{
-    username: 'nguyendangthanhnam2013', password: 'thanhnam30072013',
-    username: 'admin', password: 'admin'
-  }];
-  let isLogin = !!localStorage.getItem('token');
-  function CheckLogin () {
-    if (isLogin) {
-      window.location.href = 'https://thewebsite2023.github.io/my-exam-en/';
-    }
-  }
-
-  function Login () {
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
-    let checkLogin = listAccount.some(value => value.username === username && value.password === password);
-    if (checkLogin) {
-      localStorage.setItem('token', username);
-      isLogin = true;
-      CheckLogin();
-    } else {
-      result.innerHTML = "<h6>Thông tin đăng nhập của bạn không khớp với dữ liệu của chúng tôi.</h6>";
-    }
-  }
-  </script>
     </body>
 </html>
