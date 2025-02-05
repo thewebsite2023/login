@@ -78,6 +78,26 @@
         <button type="submit" onclick="Login()" >Đăng nhập</button>
         <center>hoặc</center>
         <button onclick="openLoginWindow()">Đăng nhập bằng MiniQuiz Login</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Thông báo</h1>
+            </div>
+            <div class="modal-body">
+                Từ ngày 1/6/2025, MiniQuiz sẽ khóa tất cả các tài khoản vi phạm <a href="#">Chính sách quyền riêng tư</a> và <a href="#">Điều khoản sử dụng</a> của MiniQuiz. Do đó, vui lòng đọc kĩ các chính sách của MiniQuiz để tránh bị khóa tài khoản. Chúng tôi sẽ thông báo cho bạn khi các chính sách được cập nhật.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tôi hiểu rồi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  <script>  
+  $(document).ready(function(){  
+    $("#exampleModal").modal('show');  
+  });  
+</script>
     </div>
     <script>
       const listAccount = [{
