@@ -38,7 +38,7 @@
             border: 1px solid #ddd;
         }
 
-        .login-container button {
+        .login-container #button {
             width: 100%;
             padding: 10px;
             background-color: #007bff;
@@ -48,7 +48,7 @@
             cursor: pointer;
         }
 
-        .login-container button:hover {
+        .login-container #button:hover {
             background-color: #0056b3;
         }
 
@@ -76,9 +76,12 @@
         <div id="result" class="error-message"></div>
         <input type="text" id="username" placeholder="Tên đăng nhập" required>
         <input type="password" id="password" placeholder="Mật khẩu" required>
-        <button type="submit" onclick="Login()" >Đăng nhập</button>
+        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal1">Bạn quên tên đăng nhập hoặc mật khẩu?</a>
+        <br>
+        <br>
+        <button type="submit" onclick="Login()" id="button">Đăng nhập</button>
         <center>hoặc</center>
-        <button onclick="openLoginWindow()">Đăng nhập bằng MiniQuiz Login</button>
+        <button onclick="openLoginWindow()" id="button">Đăng nhập bằng MiniQuiz Login</button>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
