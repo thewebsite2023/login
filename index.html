@@ -127,11 +127,11 @@
 </script>
     </div>
     <script>
-      const listAccount = [{
-    username: 'nguyendangthanhnam2013', password: 'thanhnam30072013',
-    username: 'admin', password: 'admin',
-    username: 'nguyennhatnam2015', password: 'nam15112015',
-  }];
+const listAccount = [
+    { username: 'nguyendangthanhnam2013', password: 'thanhnam30072013' },
+    { username: 'admin', password: 'admin' },
+    { username: 'nguyennhatnam2015', password: 'nam15112015' }
+];
   let isLogin = !!localStorage.getItem('token');
   function CheckLogin () {
     if (isLogin) {
