@@ -14,6 +14,7 @@
     <title>Đăng nhập bằng MiniQuiz Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -222,6 +223,10 @@ If you provide content to customers through CloudFront, you can find steps to tr
                 window.opener.postMessage('success', window.location.origin);
                 window.close();
             }
+
+          function closeApp() {
+                window.close();
+            }
         </script>   
         <style>
             #cancelbutton {
@@ -328,5 +333,27 @@ If you provide content to customers through CloudFront, you can find steps to tr
       </div>
     </div>
   </div>
+      
+   <div class="modal fade" data-bs-backdrop="static" tabindex="-1" role="dialog" id="modalChoice">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-body p-4 text-center">
+        <h5 class="mb-0">Xin lỗi, bạn không thể đăng nhập bằng MiniQuiz Login</h5>
+        <p class="mb-0">MiniQuiz Login đang bị quá tải do quá nhiều yêu cầu được gửi đến. Hãy quay lại sau nhé!</p>
+        <p class="mb-0">Mã lỗi: 404_ERROR</p>
+        <p class="mb-0">Bấm vào Tìm hiểu thêm để biết thêm thông tin về lỗi</p>
+      </div>
+      <div class="modal-footer flex-nowrap p-0">
+        <a href="https://github.com/thewebsite2023/login/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-s%E1%BB%ADa-l%E1%BB%97i" type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end" target="_blank"><strong>Tìm hiểu thêm</strong></a>
+        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0" onclick="closeApp()">Đóng ứng dụng</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <script>  
+        $(document).ready(function(){  
+            $("#modalChoice").modal('show'); 
+        });  
+    </script>
 </body>
 </html>
