@@ -82,6 +82,13 @@
         <button type="submit" onclick="Login()" id="button">Đăng nhập</button>
         <center>hoặc</center>
         <button onclick="openLoginWindow()" id="button">Đăng nhập bằng MiniQuiz Login</button>
+      <br>
+        <br>
+        <div class="g_id_signin" data-type="standard"></div>
+        <div id="g_id_onload"
+        data-client_id="454091542275-gaahgtvm1s24c6fep710g1nd5v08pej2.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+   </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -178,5 +185,19 @@ const listAccount = [
                 });
             }
             </script>
+   <script>
+                    function handleCredentialResponse(response) {
+                        window.location.href = "https://thewebsite2023.github.io/my-exam-en";
+                    }
+            
+                    function parseJwt(token) {
+                        const base64Url = token.split('.')[1];
+                        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                        const jsonPayload = decodeURIComponent(atob(base64).split('').map(c =>
+                            '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+                        ).join(''));
+                        return JSON.parse(jsonPayload);
+                    }
+                </script>
     </body>
 </html>
