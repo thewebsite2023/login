@@ -203,52 +203,7 @@
         </div>
     </div>
     <script type="module">
-        import { signOut, updateEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
-
-const userContent = document.getElementById('userContent');
-const userEmailDisplay = document.getElementById('userEmailDisplay');
-const logoutBtn = document.getElementById('logoutBtn');
-const updateEmailBtn = document.getElementById('updateEmailBtn');
-const updateEmailInput = document.getElementById('newEmail');
-const updateEmailMessage = document.getElementById('updateEmailMessage');
-
-// Theo dõi trạng thái đăng nhập
-onAuthStateChanged(auth, (user) => {
-    if (user && user.emailVerified) {
-        loginContainer.style.display = 'none';
-        signupFormDiv.style.display = 'none';
-        passwordResetFormDiv.style.display = 'none';
-        userContent.style.display = 'block';
-        userEmailDisplay.textContent = user.email;
-    } else {
-        userContent.style.display = 'none';
-        loginContainer.style.display = 'block';
-    }
-});
-
-// Xử lý đăng xuất
-logoutBtn.addEventListener('click', async () => {
-    await signOut(auth);
-    userContent.style.display = 'none';
-    loginContainer.style.display = 'block';
-});
-
-// Xử lý đổi email
-updateEmailBtn.addEventListener('click', async () => {
-    const newEmail = updateEmailInput.value.trim();
-    if (newEmail === '') return;
-    try {
-        await updateEmail(auth.currentUser, newEmail);
-        updateEmailMessage.textContent = 'Email đã được cập nhật thành công.';
-        updateEmailMessage.style.color = 'green';
-        updateEmailMessage.style.display = 'block';
-        userEmailDisplay.textContent = newEmail;
-    } catch (error) {
-        updateEmailMessage.textContent = 'Lỗi khi cập nhật email: ' + getErrorMessage(error.code);
-        updateEmailMessage.style.color = 'red';
-        updateEmailMessage.style.display = 'block';
-    }
-});
+        
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
@@ -448,6 +403,52 @@ updateEmailBtn.addEventListener('click', async () => {
                     return 'Đã có lỗi xảy ra. Vui lòng thử lại sau.';
             }
         }
+       import { signOut, updateEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+const userContent = document.getElementById('userContent');
+const userEmailDisplay = document.getElementById('userEmailDisplay');
+const logoutBtn = document.getElementById('logoutBtn');
+const updateEmailBtn = document.getElementById('updateEmailBtn');
+const updateEmailInput = document.getElementById('newEmail');
+const updateEmailMessage = document.getElementById('updateEmailMessage');
+
+// Theo dõi trạng thái đăng nhập
+onAuthStateChanged(auth, (user) => {
+    if (user && user.emailVerified) {
+        loginContainer.style.display = 'none';
+        signupFormDiv.style.display = 'none';
+        passwordResetFormDiv.style.display = 'none';
+        userContent.style.display = 'block';
+        userEmailDisplay.textContent = user.email;
+    } else {
+        userContent.style.display = 'none';
+        loginContainer.style.display = 'block';
+    }
+});
+
+// Xử lý đăng xuất
+logoutBtn.addEventListener('click', async () => {
+    await signOut(auth);
+    userContent.style.display = 'none';
+    loginContainer.style.display = 'block';
+});
+
+// Xử lý đổi email
+updateEmailBtn.addEventListener('click', async () => {
+    const newEmail = updateEmailInput.value.trim();
+    if (newEmail === '') return;
+    try {
+        await updateEmail(auth.currentUser, newEmail);
+        updateEmailMessage.textContent = 'Email đã được cập nhật thành công.';
+        updateEmailMessage.style.color = 'green';
+        updateEmailMessage.style.display = 'block';
+        userEmailDisplay.textContent = newEmail;
+    } catch (error) {
+        updateEmailMessage.textContent = 'Lỗi khi cập nhật email: ' + getErrorMessage(error.code);
+        updateEmailMessage.style.color = 'red';
+        updateEmailMessage.style.display = 'block';
+    }
+}); 
     </script>
     </body>
 </html>
